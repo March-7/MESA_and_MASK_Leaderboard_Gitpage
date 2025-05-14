@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/BSA_Leaderboard_Gitpage/static/css/main.21b35b7c.css",
+    "main.js": "/BSA_Leaderboard_Gitpage/static/js/main.cae86f4e.js",
+    "index.html": "/BSA_Leaderboard_Gitpage/index.html",
+    "main.21b35b7c.css.map": "/BSA_Leaderboard_Gitpage/static/css/main.21b35b7c.css.map",
+    "main.cae86f4e.js.map": "/BSA_Leaderboard_Gitpage/static/js/main.cae86f4e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21b35b7c.css",
+    "static/js/main.cae86f4e.js"
+  ]
+}
