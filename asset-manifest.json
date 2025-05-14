@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/BSA_Leaderboard_Gitpage/static/css/main.21b35b7c.css",
-    "main.js": "/BSA_Leaderboard_Gitpage/static/js/main.b7fb48f4.js",
+    "main.css": "/BSA_Leaderboard_Gitpage/static/css/main.8a70004e.css",
+    "main.js": "/BSA_Leaderboard_Gitpage/static/js/main.f97211d2.js",
     "index.html": "/BSA_Leaderboard_Gitpage/index.html",
-    "main.21b35b7c.css.map": "/BSA_Leaderboard_Gitpage/static/css/main.21b35b7c.css.map",
-    "main.b7fb48f4.js.map": "/BSA_Leaderboard_Gitpage/static/js/main.b7fb48f4.js.map"
+    "main.8a70004e.css.map": "/BSA_Leaderboard_Gitpage/static/css/main.8a70004e.css.map",
+    "main.f97211d2.js.map": "/BSA_Leaderboard_Gitpage/static/js/main.f97211d2.js.map"
   },
   "entrypoints": [
-    "static/css/main.21b35b7c.css",
-    "static/js/main.b7fb48f4.js"
+    "static/css/main.8a70004e.css",
+    "static/js/main.f97211d2.js"
   ]
 }
