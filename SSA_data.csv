@@ -1,7 +1,0 @@
-rank,model,url,Safe@1,Safe@k,think@1,think@k,F-score,OS@1,OS@k,CS@1,CS@k,RO@1,RO@k
-1,Deepseek-R1,https://huggingface.co/deepseek-ai/DeepSeek-R1,94.63,88.85,37.98,16.2,47.11,52.7,13.5,20.78,4.33,67.47,40.83
-2,Doubao-1.5-thinking-pro,https://github.com/ByteDance-Seed/Seed-Thinking-v1.5,92.97,86.5,37.24,18.55,46.22,60.6,19,17.67,4.25,68.6,47
-3,Qwen3-235B-A22B,https://huggingface.co/Qwen/Qwen3-235B-A22B,97.52,93.3,35.25,12.45,44.82,55.4,9,16.47,2.17,66.1,34.17
-4,Qwen3-32B,https://huggingface.co/Qwen/Qwen3-32B,96.5,91.25,34.02,11.25,43.51,57,12,15.55,1.42,63.3,30.67
-5,QwQ-32B,https://huggingface.co/Qwen/QwQ-32B,93.54,85.1,33.38,11.4,42.57,49.8,7.5,17.12,2.58,60.43,30.33
-6,GLM-Z1-AirX,https://www.bigmodel.cn/dev/api/Reasoning-models/glm-z1,91.59,82.65,32.65,11.9,41.65,53.3,13,14.72,1.33,61.63,32.67
