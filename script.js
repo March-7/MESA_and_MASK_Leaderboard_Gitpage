@@ -13,7 +13,7 @@ async function loadLeaderboard() {
             dataLines.push({
                 line: lines[i],
                 cells: cells,
-                deceptionRate: parseFloat(cells[1]) // Deception Rate @1 (%) is the second column
+                deceptionRate: parseFloat(cells[2]) // Deception Rate @1 (%) is now the third column (after URL)
             });
         }
 
@@ -28,10 +28,12 @@ async function loadLeaderboard() {
         rankTh.textContent = 'Rank';
         headerRow.appendChild(rankTh);
 
-        headers.forEach(header => {
-            const th = document.createElement('th');
-            th.textContent = header.trim();
-            headerRow.appendChild(th);
+        headers.forEach((header, index) => {
+            if (index !== 1) { // Skip the URL column header
+                const th = document.createElement('th');
+                th.textContent = header.trim();
+                headerRow.appendChild(th);
+            }
         });
 
         // Build table body
@@ -47,25 +49,29 @@ async function loadLeaderboard() {
             row.appendChild(rankTd);
 
             cells.forEach((cell, index) => {
+                if (index === 1) {
+                    // Skip URL column in display, but use it for model name link
+                    return;
+                }
+
                 const td = document.createElement('td');
                 if (index === 0) {
-                    // Model name column
+                    // Model name column with link
                     td.classList.add('model-name');
-                } else if (index === 1) {
-                    // Deception Rate @1 column - add highlighting
-                    const value = parseFloat(cell);
+                    const link = document.createElement('a');
+                    link.href = cells[1].trim(); // URL is in cells[1]
+                    link.textContent = cell.trim();
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    td.appendChild(link);
+                } else if (index === 2) {
+                    // Deception Rate @1 column
                     td.classList.add('metric');
-                    if (value < 30) {
-                        td.classList.add('low');
-                    } else if (value < 60) {
-                        td.classList.add('medium');
-                    } else {
-                        td.classList.add('high');
-                    }
+                    td.textContent = cell.trim();
                 } else {
                     td.classList.add('metric');
+                    td.textContent = cell.trim();
                 }
-                td.textContent = cell.trim();
                 row.appendChild(td);
             });
 
@@ -83,4 +89,28 @@ async function loadLeaderboard() {
 }
 
 // Load data when page loads
-document.addEventListener('DOMContentLoaded', loadLeaderboard);
+document.addEventListener('DOMContentLoaded', () => {
+    loadLeaderboard();
+
+    // Q&A Modal functionality
+    const modal = document.getElementById('qaModal');
+    const btn = document.getElementById('qaButton');
+    const span = document.getElementsByClassName('qa-close')[0];
+
+    // Open modal when button is clicked
+    btn.onclick = function() {
+        modal.style.display = 'block';
+    }
+
+    // Close modal when X is clicked
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+});
